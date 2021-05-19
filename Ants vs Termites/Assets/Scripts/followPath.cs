@@ -20,11 +20,14 @@ public class followPath : MonoBehaviour
 
     void Update()
     {
+        animator.SetFloat("speed", speed);
+
         transform.position = Vector2.MoveTowards(transform.position, wPoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
 
         Vector2 dir = wPoints.waypoints[waypointIndex].position - transform.position;
         float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        animator.SetFloat("rotation", (angle * Mathf.Deg2Rad));
+        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
         {
