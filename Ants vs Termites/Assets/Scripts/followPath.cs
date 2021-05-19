@@ -27,7 +27,6 @@ public class followPath : MonoBehaviour
         Vector2 dir = wPoints.waypoints[waypointIndex].position - transform.position;
         float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
         animator.SetFloat("rotation", (angle * Mathf.Deg2Rad));
-        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
         {
