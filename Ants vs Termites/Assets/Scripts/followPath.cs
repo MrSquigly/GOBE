@@ -13,8 +13,6 @@ public class followPath : MonoBehaviour
 
     private int waypointIndex;
 
-    private Vector2 target;
-
     void Start()
     {
         wPoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
@@ -24,14 +22,16 @@ public class followPath : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, wPoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
 
-        animator.SetFloat("speed", speed);
+        Vector2 dir = wPoints.waypoints[waypointIndex].position - transform.position;
+        float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
         {
             
             if(waypointIndex < wPoints.waypoints.Length - 1)
             {
-                waypointIndex += 1;
+                waypointIndex++;
             }
             else
             {
