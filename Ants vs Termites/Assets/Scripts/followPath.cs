@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class followPath : MonoBehaviour
@@ -13,11 +14,6 @@ public class followPath : MonoBehaviour
 
     private int waypointIndex;
 
-    public BoxCollider2D allyBox;
-
-    public BoxCollider2D enemyBox;
-
-
     void Start()
     {
         wPoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
@@ -27,8 +23,9 @@ public class followPath : MonoBehaviour
     {
         animator.SetFloat("speed", speed);
 
-        if (enemyBox.IsTouching(allyBox))
+        if (animator.GetBool("combat") == true)
         {
+            Debug.Log("combat!");
             speed = 0;
         }
         else
@@ -38,7 +35,6 @@ public class followPath : MonoBehaviour
             Vector2 dir = wPoints.waypoints[waypointIndex].position - transform.position;
             float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
             animator.SetFloat("rotation", (angle * Mathf.Deg2Rad));
-
 
             if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
             {
@@ -53,8 +49,14 @@ public class followPath : MonoBehaviour
                 }
             }
         }
-        
     }
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            Debug.Log("colliding");
+            animator.SetBool("combat", true);
+        }
+    }
 }
 

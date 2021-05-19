@@ -25,12 +25,11 @@ public class EnemyPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(waypointIndex);
         animator.SetFloat("speed", speed);
 
-
-        if (allyBox.IsTouching(enemyBox))
+        if (animator.GetBool("combat") == true)
         {
+            Debug.Log("combat!");
             speed = 0;
         }
         else
@@ -53,6 +52,15 @@ public class EnemyPath : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Ally"))
+        {
+            Debug.Log("colliding");
+            animator.SetBool("combat", true);
         }
     }
 }
