@@ -12,6 +12,10 @@ public class EnemyPath : MonoBehaviour
 
     private int waypointIndex;
 
+    public BoxCollider2D allyBox;
+
+    public BoxCollider2D enemyBox;
+
     void Start()
     {
         wPoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
@@ -24,21 +28,30 @@ public class EnemyPath : MonoBehaviour
         Debug.Log(waypointIndex);
         animator.SetFloat("speed", speed);
 
-        transform.position = Vector2.MoveTowards(transform.position, wPoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
 
-        Vector2 dir = wPoints.waypoints[waypointIndex].position - transform.position;
-        float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
-        animator.SetFloat("rotation", (angle * Mathf.Deg2Rad));
-
-        if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
+        if (allyBox.IsTouching(enemyBox))
         {
-            if (waypointIndex > 0)
+            speed = 0;
+        }
+        else
+        {
+
+            transform.position = Vector2.MoveTowards(transform.position, wPoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
+
+            Vector2 dir = wPoints.waypoints[waypointIndex].position - transform.position;
+            float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
+            animator.SetFloat("rotation", (angle * Mathf.Deg2Rad));
+
+            if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
             {
-                waypointIndex--;
-            }
-            else
-            {
-                Destroy(gameObject);
+                if (waypointIndex > 0)
+                {
+                    waypointIndex--;
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
