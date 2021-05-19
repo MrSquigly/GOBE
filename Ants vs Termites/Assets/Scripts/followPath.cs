@@ -6,9 +6,14 @@ public class followPath : MonoBehaviour
 {
 
     public float speed;
+
+    public Animator animator;
+
     private Waypoints wPoints;
 
     private int waypointIndex;
+
+    private Vector2 target;
 
     void Start()
     {
@@ -18,6 +23,8 @@ public class followPath : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, wPoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
+
+        animator.SetFloat("speed", speed);
 
         if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
         {
