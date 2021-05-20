@@ -73,7 +73,6 @@ public class followPath : MonoBehaviour
         {
             speed = 5;
             animator.SetBool("combat", false);
-            Debug.Log("yes");
         }
     }
 }
