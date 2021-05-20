@@ -65,11 +65,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 21aeacdc7dd704e4e81108d89443d7a2, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 3799797837851121060}
   - component: {fileID: -202099249260780616}
   - component: {fileID: 4322713581854798939}
+  - component: {fileID: -6292821580570199320}
   m_Layer: 0
   m_Name: Beetle_0
   m_TagString: Ally
@@ -372,6 +373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   animator: {fileID: 3799797837851121063}
+  allyBox: {fileID: 4322713581854798939}
+  enemyBox: {fileID: -947400087596812132, guid: 74f29a20307998e44aae0bc526f0b6de, type: 3}
 --- !u!50 &-202099249260780616
 Rigidbody2D:
   serializedVersion: 4
@@ -390,7 +393,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &4322713581854798939
@@ -419,3 +422,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &-6292821580570199320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799797837851121048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dde971986e6a074783ef182692d16ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 89962872}
+  attackDamage: 5
+  attackSpeed: 0.5
+  attackTime: 0.2
+  nextDamageEvent: 0
+  startHealth: 50
+  animator: {fileID: 3799797837851121063}
+  canAttack: 1

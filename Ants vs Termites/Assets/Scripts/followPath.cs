@@ -6,6 +6,8 @@ using UnityEngine;
 public class followPath : MonoBehaviour
 {
 
+    statsManager stats;
+
     public float speed;
 
     public Animator animator;
@@ -14,8 +16,13 @@ public class followPath : MonoBehaviour
 
     private int waypointIndex;
 
+    public BoxCollider2D allyBox;
+
+    public BoxCollider2D enemyBox;
+
     void Start()
     {
+        stats = GetComponent<statsManager>();
         wPoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
     }
 
@@ -23,11 +30,12 @@ public class followPath : MonoBehaviour
     {
         animator.SetFloat("speed", speed);
 
-        if (animator.GetBool("combat") == true)
+        if (animator.GetBool("combat") == true || animator.GetBool("dead") == true)
         {
-            Debug.Log("combat!");
+
             speed = 0;
         }
+        
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, wPoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
@@ -36,7 +44,7 @@ public class followPath : MonoBehaviour
             float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90;
             animator.SetFloat("rotation", (angle * Mathf.Deg2Rad));
 
-            if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.01f)
+            if (Vector2.Distance(transform.position, wPoints.waypoints[waypointIndex].position) < 0.1f)
             {
 
                 if (waypointIndex < wPoints.waypoints.Length - 1)
@@ -50,13 +58,24 @@ public class followPath : MonoBehaviour
             }
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            Debug.Log("colliding");
             animator.SetBool("combat", true);
+            stats.TakeDamage(stats.attackDamage);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (speed == 0 && allyBox.IsTouching(enemyBox) == false)
+        {
+            speed = 5;
+            animator.SetBool("combat", false);
+            Debug.Log("yes");
         }
     }
 }
+
 

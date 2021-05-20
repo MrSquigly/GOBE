@@ -241,11 +241,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 21aeacdc7dd704e4e81108d89443d7a2, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 3004360104275505015}
   - component: {fileID: 3201328944976245558}
   - component: {fileID: -947400087596812132}
+  - component: {fileID: -8296385707171178571}
   m_Layer: 0
   m_Name: Maggot_0
   m_TagString: Enemy
@@ -392,7 +393,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &-947400087596812132
@@ -421,3 +422,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &-8296385707171178571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004360104275505003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dde971986e6a074783ef182692d16ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 2074484762}
+  attackDamage: 5
+  attackSpeed: 1
+  attackTime: 1
+  nextDamageEvent: 0
+  startHealth: 20
+  animator: {fileID: 3004360104275505012}
+  canAttack: 1
