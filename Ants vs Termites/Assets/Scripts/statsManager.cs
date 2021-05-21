@@ -8,7 +8,6 @@ public class statsManager : MonoBehaviour
     public Image healthbar;
 
     public float attackDamage;
-    public float attackSpeed;
     public float attackTime;
     public float nextDamageEvent;
 

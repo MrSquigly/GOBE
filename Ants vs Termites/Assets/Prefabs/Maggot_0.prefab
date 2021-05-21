@@ -436,8 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 2074484762}
   attackDamage: 5
-  attackSpeed: 1
-  attackTime: 1
+  attackTime: 0.2
   nextDamageEvent: 0
   startHealth: 20
   animator: {fileID: 3004360104275505012}
