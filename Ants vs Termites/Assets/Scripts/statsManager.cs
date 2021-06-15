@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class statsManager : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class statsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(PlayerPrefs.GetFloat("Repellent") <= 0)
+        {
+            SceneManager.LoadScene("Game");
+        }
+
         if(Time.time >= nextDamageEvent)
         {
             nextDamageEvent = Time.time + attackTime;
@@ -49,7 +56,11 @@ public class statsManager : MonoBehaviour
             animator.SetBool("combat", false);
             animator.SetBool("dead", true);
             Destroy(gameObject, 0.2f);
-            
+            if (gameObject.tag.Equals("Enemy")) {
+                PlayerPrefs.SetFloat("Food", (PlayerPrefs.GetFloat("Food") + 1));
+            }
+
+
         }
     }
 }

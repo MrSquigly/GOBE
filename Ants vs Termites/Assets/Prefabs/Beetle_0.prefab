@@ -435,10 +435,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 89962872}
-  attackDamage: 5
-  attackSpeed: 0.5
+  attackDamage: 50
   attackTime: 0.2
   nextDamageEvent: 0
   startHealth: 50
   animator: {fileID: 3799797837851121063}
   canAttack: 1
+  interval: 5

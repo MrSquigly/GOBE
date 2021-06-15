@@ -17,7 +17,11 @@ public class Instantiate : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            Instantiate(spritePrefab, transform.position, Quaternion.identity);
+            if(PlayerPrefs.GetFloat("Food") > 10)
+            {
+                Instantiate(spritePrefab, transform.position, Quaternion.identity);
+                PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 10);
+            }
         }
     }
 }

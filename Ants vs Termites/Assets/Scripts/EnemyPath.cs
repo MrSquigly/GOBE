@@ -51,6 +51,7 @@ public class EnemyPath : MonoBehaviour
                 else
                 {
                     Destroy(gameObject);
+                    PlayerPrefs.SetFloat("Repellent", (PlayerPrefs.GetFloat("Repellent") - 1));
                 }
             }
         }

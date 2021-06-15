@@ -441,3 +441,4 @@ MonoBehaviour:
   startHealth: 20
   animator: {fileID: 3004360104275505012}
   canAttack: 1
+  interval: 5
