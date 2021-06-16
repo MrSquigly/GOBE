@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 3799797837851121048, guid: 6ef6af605c0baf140a32b974e8185422, type: 3}
-  enemySpawn: 5
+  cooldown: 0
 --- !u!4 &7399125
 Transform:
   m_ObjectHideFlags: 0
@@ -4974,6 +4974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 3004360104275505003, guid: 74f29a20307998e44aae0bc526f0b6de, type: 3}
   increment: 5
+  incrementDecrease: 0.9
+  minIncrement: 0.5
 --- !u!4 &2113032713
 Transform:
   m_ObjectHideFlags: 0
