@@ -44,6 +44,7 @@ public class enemyInstantiate : MonoBehaviour
                 Debug.Log(statsManager.killCount);
                 if(statsManager.killCount == waveGoal)
                 {
+                    statsManager.killCount = 0;
                     StartCoroutine(WaveCooldown());
                     if (increment > minIncrement)
                     {
@@ -57,10 +58,10 @@ public class enemyInstantiate : MonoBehaviour
 
     private IEnumerator WaveCooldown()
     {
-        enemySpawn += waveGoal;
-        waveGoal += 10;
         canStart = false;
         waveIndicator.enabled = true;
+        enemySpawn = Time.timeSinceLevelLoad + 11;
+        mobCount = 0;
         yield return new WaitForSeconds(10f);
         waveIndicator.enabled = false;
         canStart = true;
