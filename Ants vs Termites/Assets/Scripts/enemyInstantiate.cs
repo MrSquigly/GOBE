@@ -10,21 +10,41 @@ public class enemyInstantiate : MonoBehaviour
     public float increment;
     public float incrementDecrease;
     public float minIncrement;
+
+    private bool canStart = true;
+
+    private int mobCount = 0;
+    private int waveGoal = 10;
    
     // Update is called once per frame
     void Update()
     {
-
-        if (Time.timeSinceLevelLoad >= enemySpawn)
+        if (Time.timeSinceLevelLoad >= enemySpawn && canStart == true)
         {
             Instantiate(spritePrefab, transform.position, Quaternion.identity);
+            mobCount++;
             enemySpawn += increment;
 
-            if (increment > minIncrement)
+            if (mobCount == waveGoal)
             {
-                increment *= incrementDecrease;
+                StartCoroutine(WaveCooldown());
+                waveGoal += 10;
+                if (increment > minIncrement)
+                {
+                    increment *= incrementDecrease;
+                }
+                PlayerPrefs.SetFloat("Wave", PlayerPrefs.GetFloat("Wave") + 1);
             }
             
         }
+    }
+
+    private IEnumerator WaveCooldown()
+    {
+        canStart = false;
+        enemySpawn += 10f;
+        yield return new WaitForSeconds(10f);
+
+        canStart = true;
     }
 }

@@ -3319,7 +3319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 483955377}
   nameText: Food
-  init: 100
+  init: 90
 --- !u!114 &987594508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4974,7 +4974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 3004360104275505003, guid: 74f29a20307998e44aae0bc526f0b6de, type: 3}
   increment: 5
-  incrementDecrease: 0.9
+  incrementDecrease: 0.75
   minIncrement: 0.5
 --- !u!4 &2113032713
 Transform:

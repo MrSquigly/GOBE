@@ -54,6 +54,8 @@ public class followPath : MonoBehaviour
                 else
                 {
                     Destroy(gameObject);
+                    PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") * 0.95f);
+                    Debug.Log(PlayerPrefs.GetFloat("Interval"));
                 }
             }
         }

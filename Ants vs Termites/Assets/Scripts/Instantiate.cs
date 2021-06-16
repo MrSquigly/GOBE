@@ -39,7 +39,6 @@ public class Instantiate : MonoBehaviour
         {
             canPress = true;
             yield return new WaitForSeconds(0.8f); // I used .2 secs but you can update it as fast as you want
-            Debug.Log(canPress);
         }
     }
     

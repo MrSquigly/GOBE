@@ -59,8 +59,6 @@ public class statsManager : MonoBehaviour
             if (gameObject.tag.Equals("Enemy")) {
                 PlayerPrefs.SetFloat("Food", (PlayerPrefs.GetFloat("Food") + 1));
             }
-
-
         }
     }
 }
