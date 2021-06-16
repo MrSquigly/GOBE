@@ -52,6 +52,7 @@ public class EnemyPath : MonoBehaviour
                 {
                     Destroy(gameObject);
                     PlayerPrefs.SetFloat("Repellent", (PlayerPrefs.GetFloat("Repellent") - 1));
+                    statsManager.killCount++;
                 }
             }
         }

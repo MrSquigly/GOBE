@@ -19,6 +19,9 @@ public class statsManager : MonoBehaviour
 
     public bool canAttack = true;
 
+    public static int killCount = 0;
+    private bool hasCounted = false;
+
     void Start()
     {
         health = startHealth;
@@ -58,6 +61,11 @@ public class statsManager : MonoBehaviour
             Destroy(gameObject, 0.2f);
             if (gameObject.tag.Equals("Enemy")) {
                 PlayerPrefs.SetFloat("Food", (PlayerPrefs.GetFloat("Food") + 1));
+                if(hasCounted== false)
+                {
+                    killCount++;
+                    hasCounted = true;
+                }
             }
         }
     }

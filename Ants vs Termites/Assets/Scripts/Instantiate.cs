@@ -19,7 +19,7 @@ public class Instantiate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canPress == true)
+        if (canPress == true && enemyInstantiate.canStart == true)
         {
             if (Input.GetKeyDown("space"))
             {
