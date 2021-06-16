@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 3799797837851121048, guid: 6ef6af605c0baf140a32b974e8185422, type: 3}
+  enemySpawn: 5
 --- !u!4 &7399125
 Transform:
   m_ObjectHideFlags: 0
@@ -3413,7 +3414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607bb0c6ad0dbd94eb5ea1b2130d1ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increment: 102
 --- !u!1 &999709131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,10 +4969,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2113032711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eabea02a7f6baca43b873a73c9ab0e2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d6fecc9379f2894bbe3c736ee69954b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spritePrefab: {fileID: 3004360104275505003, guid: 74f29a20307998e44aae0bc526f0b6de, type: 3}
+  increment: 5
 --- !u!4 &2113032713
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Instantiate : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject spritePrefab;
-
+    public int enemySpawn = 5;
     void Start()
     {
         Instantiate(spritePrefab, transform.position, Quaternion.identity);
