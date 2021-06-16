@@ -8,7 +8,7 @@ public class enemyInstantiate : MonoBehaviour
     public GameObject spritePrefab;
     public TMP_Text waveIndicator;
 
-    float enemySpawn = 0f;
+    private float enemySpawn = 0f;
     public float increment;
     public float incrementDecrease;
     public float minIncrement;
@@ -27,8 +27,6 @@ public class enemyInstantiate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.timeSinceLevelLoad + "compared to" + enemySpawn);
-
         if (Time.timeSinceLevelLoad >= enemySpawn && canStart == true)
         {
             if(canSpawn == true)
@@ -41,7 +39,6 @@ public class enemyInstantiate : MonoBehaviour
             if (mobCount == waveGoal)
             {
                 canSpawn = false;
-                Debug.Log(statsManager.killCount);
                 if(statsManager.killCount == waveGoal)
                 {
                     statsManager.killCount = 0;
