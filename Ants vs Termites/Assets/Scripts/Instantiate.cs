@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Instantiate : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public GameObject spritePrefab;
-    public int enemySpawn = 5;
+
+    float timer;
+    public float cooldown;
     void Start()
     {
         Instantiate(spritePrefab, transform.position, Quaternion.identity);
@@ -15,12 +17,16 @@ public class Instantiate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        timer += Time.deltaTime;
+        if (timer >= cooldown)
         {
-            if(PlayerPrefs.GetFloat("Food") > 10)
+            if (Input.GetKeyDown("space"))
             {
-                Instantiate(spritePrefab, transform.position, Quaternion.identity);
-                PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 10);
+                if (PlayerPrefs.GetFloat("Food") > 10)
+                {
+                    Instantiate(spritePrefab, transform.position, Quaternion.identity);
+                    PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 10);
+                }
             }
         }
     }

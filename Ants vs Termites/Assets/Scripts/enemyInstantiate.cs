@@ -6,8 +6,10 @@ public class enemyInstantiate : MonoBehaviour
 {
     public GameObject spritePrefab;
 
-    float enemySpawn = 1f;
+    float enemySpawn = 0f;
     public float increment;
+    public float incrementDecrease;
+    public float minIncrement;
    
     // Update is called once per frame
     void Update()
@@ -17,6 +19,12 @@ public class enemyInstantiate : MonoBehaviour
         {
             Instantiate(spritePrefab, transform.position, Quaternion.identity);
             enemySpawn += increment;
+
+            if (increment > minIncrement)
+            {
+                increment *= incrementDecrease;
+            }
+            
         }
     }
 }
