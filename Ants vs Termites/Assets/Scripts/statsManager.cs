@@ -9,11 +9,13 @@ public class statsManager : MonoBehaviour
     public Image healthbar;
 
     public float attackDamage;
+
     public float attackTime;
     public float nextDamageEvent;
 
-    public int startHealth;
+    public float startHealth;
     private float health;
+    
 
     public Animator animator;
 
@@ -24,14 +26,17 @@ public class statsManager : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetFloat("Attack Damage", attackDamage);
+        PlayerPrefs.SetFloat("Start Health", startHealth);
         health = startHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(PlayerPrefs.GetFloat("Repellent") <= 0)
+        attackDamage = PlayerPrefs.GetFloat("Attack Damage");
+        startHealth = PlayerPrefs.GetFloat("Start Health");
+        if (PlayerPrefs.GetFloat("Repellent") <= 0)
         {
             SceneManager.LoadScene("Game");
         }

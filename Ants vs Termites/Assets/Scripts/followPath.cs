@@ -6,7 +6,7 @@ using UnityEngine;
 public class followPath : MonoBehaviour
 {
 
-    statsManager stats;
+    statsManager statsManager;
 
     public float speed;
 
@@ -22,7 +22,7 @@ public class followPath : MonoBehaviour
 
     void Start()
     {
-        stats = GetComponent<statsManager>();
+        statsManager = GetComponent<statsManager>();
         wPoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
     }
 
@@ -64,7 +64,7 @@ public class followPath : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             animator.SetBool("combat", true);
-            stats.TakeDamage(stats.attackDamage);
+            statsManager.TakeDamage(statsManager.attackDamage);
         }
     }
 

@@ -10,6 +10,7 @@ public class enemyInstantiate : MonoBehaviour
 
     private float enemySpawn = 0f;
     public float increment;
+
     public float incrementDecrease;
     public float minIncrement;
 
@@ -21,12 +22,14 @@ public class enemyInstantiate : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetFloat("Increment", increment);
         waveIndicator.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        increment = PlayerPrefs.GetFloat("Increment");
         if (Time.timeSinceLevelLoad >= enemySpawn && canStart == true)
         {
             if(canSpawn == true)
