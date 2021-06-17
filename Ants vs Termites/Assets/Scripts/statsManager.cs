@@ -8,12 +8,15 @@ public class statsManager : MonoBehaviour
 {
     public Image healthbar;
 
-    public float attackDamage;
+    public static float attackDamage;
+    public static float enemyDamage;
 
     public float attackTime;
     public float nextDamageEvent;
 
-    public float startHealth;
+    
+    public static float startHealthAlly;
+    public static float startHealthEnemy;
     private float health;
     
 
@@ -26,14 +29,24 @@ public class statsManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetFloat("Attack Damage", attackDamage);
-        PlayerPrefs.SetFloat("Start Health", startHealth);
-        health = startHealth;
+        attackDamage = PlayerPrefs.GetFloat("Attack Damage");
+        startHealthAlly = PlayerPrefs.GetFloat("Start Health");
+        startHealthEnemy = PlayerPrefs.GetFloat("Enemy Start Health");
+        enemyDamage = PlayerPrefs.GetFloat("Enemy Damage");
+        if (tag.Equals("Enemy"))
+        {
+            health = startHealthEnemy;
+        }
+        else
+        {
+            health = startHealthAlly;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (PlayerPrefs.GetFloat("Repellent") <= 0)
         {
             SceneManager.LoadScene("Game");
@@ -46,12 +59,20 @@ public class statsManager : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float attackDamage)
+    public void TakeDamage()
     {
         if(canAttack == true)
         {
-            health -= attackDamage;
-            healthbar.fillAmount = health / startHealth;
+            if (tag.Equals("Enemy"))
+            {
+                health -= PlayerPrefs.GetFloat("Attack Damage");
+                healthbar.fillAmount = health / startHealthEnemy;
+            }
+            else
+            {
+                health -= enemyDamage;
+                healthbar.fillAmount = health / startHealthAlly;
+            }
             canAttack = false;
         }
         

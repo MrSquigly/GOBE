@@ -51,6 +51,9 @@ public class enemyInstantiate : MonoBehaviour
                         increment *= incrementDecrease;
                     }
                     PlayerPrefs.SetFloat("Wave", PlayerPrefs.GetFloat("Wave") + 1);
+                    PlayerPrefs.SetFloat("Enemy Start Health", PlayerPrefs.GetFloat("Enemy Start Health") + 2f);
+                    PlayerPrefs.SetFloat("Enemy Damage", PlayerPrefs.GetFloat("Enemy Damage") + 5);
+
                 }
             }
         }
