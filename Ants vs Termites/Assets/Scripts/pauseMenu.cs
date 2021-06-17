@@ -11,6 +11,7 @@ public class pauseMenu : MonoBehaviour
     public GameObject gameUI;
     public GameObject upgradeUI;
     public GameObject optionsUI;
+
     void Update()
     {
        if(Input.GetKeyDown(KeyCode.Escape))
