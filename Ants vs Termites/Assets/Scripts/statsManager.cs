@@ -53,10 +53,6 @@ public class statsManager : MonoBehaviour
             health -= attackDamage;
             healthbar.fillAmount = health / startHealth;
             canAttack = false;
-            if (gameObject.tag.Equals("Ally"))
-            {
-                Debug.Log(health);
-            }
         }
         
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IncreaseFood : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,10 @@ public class IncreaseFood : MonoBehaviour
     private IEnumerator ScoreUpdater()
     {
         while (true)
-        { 
-            PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + 10);
+        {
             yield return new WaitForSeconds(PlayerPrefs.GetFloat("Interval")); // I used .2 secs but you can update it as fast as you want
+            Debug.Log("I am farming" + PlayerPrefs.GetFloat("Interval"));
+            PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + 10);
         }
     }
 }

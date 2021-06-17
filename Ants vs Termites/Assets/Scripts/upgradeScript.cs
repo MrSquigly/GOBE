@@ -26,9 +26,10 @@ public class upgradeScript : MonoBehaviour
         if (x == 0 && PlayerPrefs.GetFloat("Food") >= 20)
         {
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 20);
-            PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") - 1);
+            PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") * 0.75f);
             x = 1;
-            
+            Debug.Log(PlayerPrefs.GetFloat("Interval"));
+
         }
 
     }
@@ -38,7 +39,7 @@ public class upgradeScript : MonoBehaviour
         if (x == 1 && PlayerPrefs.GetFloat("Food") >= 40)
         {
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 40);
-            PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") - 1);
+            PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") * 0.75f);
             x = 2;
         }
     }
@@ -48,7 +49,7 @@ public class upgradeScript : MonoBehaviour
         if (x == 2 && PlayerPrefs.GetFloat("Food") >= 60)
         {
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 60);
-            PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") - 1);
+            PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") * 0.75f);
             x = 3;
         }
 
