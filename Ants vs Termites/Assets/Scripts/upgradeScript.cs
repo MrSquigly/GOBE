@@ -9,6 +9,7 @@ public class upgradeScript : MonoBehaviour
     public GameObject upgradeUI;
     public GameObject pauseUI;
     public GameObject gameUI;
+    public GameObject optionsUI;
 
     private int x = 0;
     private int y = 0;
@@ -19,6 +20,7 @@ public class upgradeScript : MonoBehaviour
     {
         pauseUI.SetActive(true);
         upgradeUI.SetActive(false);
+        optionsUI.SetActive(false);
     }
 
     public void fooda()
