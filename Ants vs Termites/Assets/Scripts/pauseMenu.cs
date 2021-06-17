@@ -47,6 +47,7 @@ public class pauseMenu : MonoBehaviour
     {
         pauseUI.SetActive(false);
         upgradeUI.SetActive(false);
+        optionsUI.SetActive(false);
         gameUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
