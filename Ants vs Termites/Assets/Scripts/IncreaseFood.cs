@@ -8,7 +8,7 @@ public class IncreaseFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetFloat("Interval", 0.5f);
+        PlayerPrefs.SetFloat("Interval", 5);
         StartCoroutine(ScoreUpdater());
     }
 
@@ -16,7 +16,7 @@ public class IncreaseFood : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(PlayerPrefs.GetFloat("Interval")); // I used .2 secs but you can update it as fast as you want
+            yield return new WaitForSeconds(PlayerPrefs.GetFloat("Interval"));
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + 10);
         }
     }

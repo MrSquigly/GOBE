@@ -62,7 +62,7 @@ public class upgradeScript : MonoBehaviour
         if (y == 0 && PlayerPrefs.GetFloat("Food") >= 20)
         {
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 20);
-            PlayerPrefs.SetFloat("Attack Damage", PlayerPrefs.GetFloat("Attack Damage") + 50);
+            PlayerPrefs.SetFloat("Attack Damage", PlayerPrefs.GetFloat("Attack Damage") + 10);
             y = 1;
         }
     }
