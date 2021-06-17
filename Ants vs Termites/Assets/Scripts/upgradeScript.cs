@@ -27,6 +27,7 @@ public class upgradeScript : MonoBehaviour
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 20);
             PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") - 1);
             x = 1;
+            this.enabled = false;
         }
 
     }
