@@ -6668,7 +6668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 993217001}
-  gameUI: {fileID: 949272540}
+  gameUI: {fileID: 1448232323}
   upgradeUI: {fileID: 960848928}
   optionsUI: {fileID: 1481800134}
 --- !u!114 &567417827
@@ -6685,7 +6685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeUI: {fileID: 960848928}
   pauseUI: {fileID: 993217001}
-  gameUI: {fileID: 949272540}
+  gameUI: {fileID: 1448232323}
   optionsUI: {fileID: 1481800134}
 --- !u!1 &613532696
 GameObject:
