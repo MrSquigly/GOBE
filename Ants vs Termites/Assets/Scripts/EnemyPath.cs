@@ -63,7 +63,7 @@ public class EnemyPath : MonoBehaviour
         if (collision.gameObject.tag.Equals("Ally"))
         {
             animator.SetBool("combat", true);
-            stats.TakeDamage(stats.attackDamage);
+            stats.TakeDamage();
         }
     }
 

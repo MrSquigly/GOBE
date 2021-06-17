@@ -64,7 +64,7 @@ public class followPath : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             animator.SetBool("combat", true);
-            statsManager.TakeDamage(statsManager.attackDamage);
+            statsManager.TakeDamage();
         }
     }
 

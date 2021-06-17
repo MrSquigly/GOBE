@@ -438,7 +438,6 @@ MonoBehaviour:
   attackDamage: 50
   attackTime: 0.2
   nextDamageEvent: 0
-  startHealth: 50
+  startHealthAlly: 100
   animator: {fileID: 3799797837851121063}
   canAttack: 1
-  interval: 5
