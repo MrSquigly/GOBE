@@ -6670,6 +6670,7 @@ MonoBehaviour:
   pauseUI: {fileID: 993217001}
   gameUI: {fileID: 949272540}
   upgradeUI: {fileID: 960848928}
+  optionsUI: {fileID: 0}
 --- !u!114 &567417827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6903,7 +6904,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 567417827}
         m_TargetAssemblyTypeName: upgradeScript, Assembly-CSharp
-        m_MethodName: reppellentb
+        m_MethodName: goBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7941,13 +7942,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 567417821}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 567417826}
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
+        m_MethodName: Options
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8304,7 +8305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &949272541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8345,7 +8346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &960848929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10157,7 +10158,7 @@ GameObject:
   - component: {fileID: 1630286698}
   - component: {fileID: 1630286697}
   m_Layer: 5
-  m_Name: spawnrateDown3
+  m_Name: Go Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10229,7 +10230,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 567417827}
         m_TargetAssemblyTypeName: upgradeScript, Assembly-CSharp
-        m_MethodName: incrementc
+        m_MethodName: goBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10931,6 +10932,7 @@ MonoBehaviour:
   pauseUI: {fileID: 0}
   gameUI: {fileID: 0}
   upgradeUI: {fileID: 0}
+  optionsUI: {fileID: 0}
 --- !u!114 &1895442299
 MonoBehaviour:
   m_ObjectHideFlags: 0
