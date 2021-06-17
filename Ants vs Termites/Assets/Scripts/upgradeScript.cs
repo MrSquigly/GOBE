@@ -1,13 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class upgradeScript : MonoBehaviour
 {
+    public GameObject upgradeUI;
+    public GameObject pauseUI;
+    public GameObject gameUI;
+
     private int x = 0;
     private int y = 0;
     private int z = 0;
     private int q = 0;
+
+    public void goBack()
+    {
+        pauseUI.SetActive(true);
+        upgradeUI.SetActive(false);
+    }
 
     public void fooda()
     {
@@ -19,6 +30,7 @@ public class upgradeScript : MonoBehaviour
         }
 
     }
+
     public void foodb()
     {
         if (x == 1 && PlayerPrefs.GetFloat("Food") >= 40)

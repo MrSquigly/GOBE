@@ -9,6 +9,7 @@ public class pauseMenu : MonoBehaviour
 
     public GameObject pauseUI;
     public GameObject gameUI;
+    public GameObject upgradeUI;
     void Update()
     {
        if(Input.GetKeyDown(KeyCode.Escape))
@@ -23,12 +24,12 @@ public class pauseMenu : MonoBehaviour
             }
         }
     }
-
     public void upgradeMenu()
     {
-        SceneManager.LoadScene("upgradeMenu");
+        pauseUI.SetActive(false);
+        upgradeUI.SetActive(true);
     }
-
+    
     public void Menu()
     {
         SceneManager.LoadScene("mainMenu");
@@ -37,6 +38,7 @@ public class pauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseUI.SetActive(false);
+        upgradeUI.SetActive(false);
         gameUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
@@ -46,6 +48,7 @@ public class pauseMenu : MonoBehaviour
     {
         pauseUI.SetActive(true);
         gameUI.SetActive(false);
+        upgradeUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
     }
