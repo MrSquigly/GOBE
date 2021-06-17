@@ -64,7 +64,7 @@ public class EnemyPath : MonoBehaviour
         {
             
             animator.SetBool("combat", true);
-            stats.TakeDamage(stats.attackDamage);
+            stats.TakeDamage(statsManager.attackDamage);
         }
     }
 
