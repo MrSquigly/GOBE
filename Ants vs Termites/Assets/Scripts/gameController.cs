@@ -12,4 +12,9 @@ public class gameController : MonoBehaviour
         PlayerPrefs.SetFloat("Enemy Start Health", 100);
         PlayerPrefs.SetFloat("Enemy Damage", 15);
     }
+
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
 }
