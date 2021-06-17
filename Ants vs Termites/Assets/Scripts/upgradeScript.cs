@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class upgradeScript : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class upgradeScript : MonoBehaviour
             PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - 20);
             PlayerPrefs.SetFloat("Interval", PlayerPrefs.GetFloat("Interval") - 1);
             x = 1;
-            this.enabled = false;
+            
         }
 
     }
