@@ -34,8 +34,6 @@ public class statsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackDamage = PlayerPrefs.GetFloat("Attack Damage");
-        startHealth = PlayerPrefs.GetFloat("Start Health");
         if (PlayerPrefs.GetFloat("Repellent") <= 0)
         {
             SceneManager.LoadScene("Game");
@@ -55,6 +53,10 @@ public class statsManager : MonoBehaviour
             health -= attackDamage;
             healthbar.fillAmount = health / startHealth;
             canAttack = false;
+            if (gameObject.tag.Equals("Ally"))
+            {
+                Debug.Log(health);
+            }
         }
         
 
