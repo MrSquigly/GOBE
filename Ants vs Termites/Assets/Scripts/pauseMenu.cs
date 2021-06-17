@@ -26,6 +26,11 @@ public class pauseMenu : MonoBehaviour
             }
         }
     }
+    public void startMenu()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
     public void upgradeMenu()
     {
         pauseUI.SetActive(false);
